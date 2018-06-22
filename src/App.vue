@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <!-- router-link 定义点击后导航到哪个路径下 -->
-    <router-link to="/page/home">Home</router-link>
+    <!-- <router-link to="/page/home">Home</router-link>
     <router-link to="/page/about">About</router-link>
+    <router-link to="/page/login">Login</router-link> -->
     <!-- 对应的组件内容渲染到router-view中 -->
     <router-view></router-view>
   </div>

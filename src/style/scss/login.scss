@@ -1,0 +1,192 @@
+html,body{
+    width: 100%;
+    height: 100%;
+
+}
+$img: "../images/";
+a{
+    color: #333;
+}
+img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.head{
+    .bg{
+        background: url( $img +"login_bg.jpg") no-repeat center center/contain;
+        width: 100%;
+        height: 1.34rem;
+        background-size: cover;
+    }
+  
+    .logo{
+        width: 1.6rem;
+        height: 1.6rem;
+        font-size: .4rem;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 1.88rem;
+        p{
+            margin-top: .16rem;
+        }
+
+    }
+
+}
+.wrap{
+    padding: 0 .3rem;
+    .gl-con{
+		width: 100%;
+        padding: 0 .3rem;
+        box-sizing:border-box;
+        .gl-tel{
+            margin-bottom: .36rem;
+        }
+	}
+	.gl-tel,.gl-code{
+        width: 100%;
+        height: 1rem;
+		border-bottom: 1px solid #e1e1e1;
+		position: relative;
+		img{
+			position: absolute;
+            display: block;
+            width: .27rem;
+            left: 0;
+            top: .35rem;
+		}
+		.getcode{
+            width: .92rem;
+            height: .51rem;
+            line-break: .51rem;
+            border: 1px solid #00beff;
+            color: #00beff;
+			outline: none;
+			border-radius: 3px;
+			background: #fff;
+			position: absolute;
+            right: 0;
+            top:.22rem;
+            font-size: .3rem;
+	
+		}
+		.getcode-done{
+			background: #cecece;
+			color: #333;
+		}
+    }
+    .gl-code {
+        img{
+            width: .44rem;
+        }
+        .getcode{
+            &.noclick{
+                border: 1px solid #ccc;
+                color: #ccc; 
+            }
+                      
+        }
+    }
+	#login-tel,#login-code{
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: none;
+		border: none;
+        font-size: .32rem;
+        outline: none;
+        padding: 0 2rem 0 .6rem ;
+        box-sizing: border-box;
+    
+    }
+    .gl-pro{
+        #login-sub{
+            display: block;
+            width: 100%;
+            height: .9rem;
+            border-radius: 3px;
+            outline: none;
+            border: none;
+            margin-top: .8rem;
+            font-size: .34rem;
+            // background: #ccc;
+            background-color: #00aaff;
+            color: #fff;
+        }
+        .agree{
+            font-size: .26rem;
+            color: #333;
+            padding-top: .37rem;
+            display: flex;
+            justify-content: space-between;
+            p{
+                a{
+                    color:#00aaff;
+                }
+            }
+        }
+    }
+}
+.mask_kefu{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 111;
+    // display: none;
+}
+.tan_tips{
+    width: 5.6rem;
+    height:3.2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    position: fixed;
+    top:5rem;
+    left:50%;
+    margin-left:-2.8rem;
+    color: #333;
+    font-size: .32rem;
+    z-index: 222;
+    // display: none;
+    .contact{
+        text-align: center;
+        padding: .56rem 0;
+        line-height: .56rem;
+    }
+    .btn_select{
+        height: .9rem;
+        line-height:.9rem;
+        display: flex;
+        border-top: 1px solid #eee;
+        p{
+            flex:1;
+            -webkit-flex: 1;
+            text-align: center;
+        }
+        .call a{
+            color:#00b4ff;
+            border-left:1px solid #eee;
+            display: inline-block;
+            width:100%;
+            height:100%;
+        }
+    }
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #e1e1e1; opacity:1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #e1e1e1;opacity:1;
+}
+
+input:-ms-input-placeholder{
+    color: #e1e1e1;opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: #e1e1e1;opacity:1;
+}
