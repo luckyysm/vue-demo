@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/page/Home'
 import About from '@/page/About'
 import Login from '@/page/Login'
+import Map from '@/page/Map'
 import Personal from '@/personal/Index'
 import Mywallet from '@/personal/mywallet'
 import Records from '@/personal/Records'
@@ -20,19 +21,15 @@ export default new Router({
       component: Home
     }, {
       path: '/',
-      redirect: '/page/amap',
+      redirect: '/page/map',
     }, {
       path: '/page/about',
       name: 'About',
       component: About
-    },{
-      path: '/page/about',
-      name: 'About',
-      component: About
     }, {
-      path: '/page/amap',
-      name: 'Amap',
-      // component: Amap
+      path: '/page/map',
+      name: 'Map',
+      component: Map
     }, {
       path: '/page/login',
       name: 'Login',

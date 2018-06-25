@@ -11,7 +11,7 @@ import Tips from './components/tips/tips.vue'
 import axios from 'axios'
 Vue.prototype.$http = axios;
 
-// import AMap from 'vue-amap'
+import AMap from 'vue-amap'
 // import Map from './page/map.vue'
 
 Vue.config.productionTip = false
@@ -25,13 +25,13 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-// Vue.use(AMap);
-// // 初始化vue-amap
-// AMap.initAMapApiLoader({
-//   key: 'f6af2ece58d15c88e10a335b0e39cae3',
-//   plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch',
-//     'AMap.Scale', 'AMap.OverView',
-//     'AMap.ToolBar', 'AMap.MapType',
-//     'AMap.PolyEditor',
-//     'AMap.CircleEditor']
-// })
+Vue.use(AMap);
+// 初始化vue-amap
+AMap.initAMapApiLoader({
+  key: 'f6af2ece58d15c88e10a335b0e39cae3',
+  plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch',
+    'AMap.Scale', 'AMap.OverView',
+    'AMap.ToolBar', 'AMap.MapType',
+    'AMap.PolyEditor',
+    'AMap.CircleEditor']
+})

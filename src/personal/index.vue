@@ -5,21 +5,30 @@
                 
             </div>
             <div class="use_bind">
-                <p class="login_num">{{login_num}}</p>
-                <p class="login_out">{{login_out}}</p>
-            </div>
+                <p class="login_num" v-if="bind">{{login_num}}</p>
+                <p class="login_num" v-else>未绑定</p>
+                <p class="login_out" v-if="bind">{{login_out}}</p>
+                <p class="login_out" v-else @click="binduser">立即绑定</p>
+            </div> 
 
         </div>
         <div class="list">
             <ul id="lists">
                 <template v-for="list in lists">
-                    <li>
-                        <router-link to = "list.linkurl">
-                            <!-- <i></i>
+                    <li v-if="list.idname==='contact'">
+                        <a href="tel:17600299652" :id="list.idname">
+                            <i></i>
                             <p>{{list.name}}</p>
-                            <span></span> -->
-                        </router-link>
-
+                            <span></span>
+                        </a>
+                   
+                    </li>
+                    <li v-else>
+                        <a :href = "list.linkurl" :id="list.idname">
+                            <i></i>
+                            <p>{{list.name}}</p>
+                            <span></span>
+                        </a>
                     </li>
 
                 </template>
@@ -34,38 +43,46 @@ export default {
         return {
             login_num: "17600299652",
             login_out: "解除绑定",
+            bind: false,
             lists: [
                 {
                     idname:"wallet",
                     name:"我的钱包",
                     linkurl: './mywallet',
-                    image: "../images/qianbao.png",
+                    registurl: '../page/login',
+                    // image: "../images/qianbao.png",
 
                 },
                 {
                     idname:"records",
                     name:"充电记录",
                     linkurl: './records',
-                    image: "../images/charge_list.png",
+                    registurl: '../page/login',
+                    // image: "../images/charge_list.png",
 
                 },
                 {
                     idname:"contact",
                     name:"联系客服",
-                    linkurl: '',
-                    image: "../images/contact.png",
+                    linkurl: 'tel:010-86466273',
+                    // image: "../images/contact.png",
 
                 },
                 {
                     idname:"aboutus",
                     name:"关于我们",
-                    linkurl: './aboutus',
-                    image: "../images/aboutus.png",
+                    linkurl: 'http://m.i-ev.com/?m=tmpphone&c=index&a=about_ju',
+                    // image: "../images/aboutus.png",
 
                 }
             ]
 
             
+        }
+    },
+    methods:{
+        binduser: function(){
+
         }
     }
     
