@@ -80,11 +80,9 @@ export default{
          //收不到验证码
         noget: function() {
             this.kefu = true;
-            console.log(this.kefu);
-
         },
         showmask: function() {  
-            console.log(this.code);
+
             //使用this访问数据  
             if(!this.code) return;
             this.code = false;
@@ -135,7 +133,7 @@ export default{
 
         },
         scancode: function(){
-            let pattern = /0?(13|14|15|16|17|18)[0-9]{9}$/;
+            let pattern = /0?(13|14|15|16|17|18|19)[0-9]{9}$/;
             if(!pattern.test(this.mobile)){
                 this.tipstext = "手机号不正确";
                 this.error = true;

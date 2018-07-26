@@ -23,12 +23,21 @@
                         </a>
                    
                     </li>
-                    <li v-else>
+                    <li v-else-if="list.idname==='aboutus'">
                         <a :href = "list.linkurl" :id="list.idname">
                             <i></i>
                             <p>{{list.name}}</p>
                             <span></span>
                         </a>
+                   
+                    </li>
+                    <li v-else>
+                        <router-link :to = "list.linkurl"  :id="list.idname">
+                            <i></i>
+                            <p>{{list.name}}</p>
+                            <span></span>
+                        </router-link>
+  
                     </li>
 
                 </template>
@@ -48,7 +57,7 @@ export default {
                 {
                     idname:"wallet",
                     name:"我的钱包",
-                    linkurl: './mywallet',
+                    linkurl: '/personal/mywallet',
                     registurl: '../page/login',
                     // image: "../images/qianbao.png",
 
@@ -56,7 +65,7 @@ export default {
                 {
                     idname:"records",
                     name:"充电记录",
-                    linkurl: './records',
+                    linkurl: '/personal/records',
                     registurl: '../page/login',
                     // image: "../images/charge_list.png",
 
@@ -89,7 +98,7 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "../style/scss/personal/index.scss";
+@import "../style/scss/personal/index";
 
 </style>
 
