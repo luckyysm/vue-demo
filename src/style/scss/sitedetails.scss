@@ -1,0 +1,219 @@
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@mixin textdott {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+$margin: 0.05rem;
+$border: 1px solid #eee;
+.global-more {
+    width: 100%;
+    background: #f2f2f2;
+    .wrap{
+        background: #f2f2f2;
+        width:100%;
+        margin: 0 auto;
+        overflow: hidden;
+        >div{
+            width: 100%;
+            >div{
+                width: 100%;
+                @include border-box;
+                padding: 0 0.3rem;
+                background: #fff;
+                border-bottom: $border;
+            }
+            .gm-content-top {
+                margin-bottom: 0.2rem;
+                .content-top {
+                    height: 2.1rem;
+                    padding: 0.35rem 0;
+                    border-bottom: $border;
+                    @include border-box;
+                    .top-point-pic {
+                        max-height: 100%;
+                        width: 1.39rem;
+                        float: left;
+                        overflow: hidden;
+                        position: relative;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .top-point-des {
+                        float: left;
+                        margin-left: 0.3rem;
+                        width: 5.12rem;
+                        margin-top: -$margin;
+                        line-height: .48rem;
+                        .gm-header-name {
+                            font-size: 0.34rem;
+                            font-weight: bold;
+                            margin-bottom:$margin;
+                            width: 100%;
+                            @include textdott;
+                        }
+                        span {
+                            display: block;
+                            font-size: 0.32rem;
+                            color: #666;
+                            margin-bottom: $margin;
+                        }
+                        .header-open-time {
+                            font-size: 0.3rem;
+                            color: #666;
+                            @include textdott;
+
+                        }
+                    }
+                }
+                .gm-number {
+                    width: 100%;
+                    padding: 0.3rem 0;
+                    >div{
+                        float: left;
+                        padding-left: 0.4rem;
+                        margin-right: 0.5rem;
+                        font-size: 0.3rem;
+                    }
+                    .gm-quick {
+                        background: url(../images/quick.png) no-repeat left center;
+                        background-size: .32rem auto;
+                    }
+                    .gm-slow {
+                  
+                        background: url(../images/slow.png) no-repeat left center;
+                        background-size: .24rem auto;
+                    }
+                }
+            }
+            .gm-address {
+                border-top: $border;
+                margin-bottom: 0.2rem;
+                padding-top: 0.3rem;
+                h2 {
+                    color: #666;
+                    font-weight: normal;
+                    font-size: 0.32rem;
+                    padding-left: 0.52rem;
+                    height: 0.34rem;
+                    line-height: 0.34rem;
+                    background: url(../images/stationaddress.png) no-repeat left center / contain;
+                    margin-bottom: 0.3rem;
+                }
+                #address {
+                    font-size: 0.32rem;
+                    padding-bottom: 0.3rem;
+                }
+                .road-book {
+                    padding: 0.3rem 0;
+                    border-top: $border;
+                    // display: none;
+                    >span{
+                        float: left;
+                        display: block;
+                        font-size: 0.32rem;
+                        height: 0.5rem;
+                        line-height: 0.5rem;
+
+                    }
+                    span:first-child {
+                        width: 1.05rem;
+                        text-align: center;
+                        border-radius: .04rem;
+                        margin-right: 0.3rem;
+                        background: #febd15;
+                        color: #fff;
+                    }
+                    span:nth-child(2) {
+                        margin-right: 0.3rem;
+                    }
+                    span:nth-child(3) {
+                        color: #febd15;
+                    }
+                    i {
+                        display: block;
+                        float: right;
+                        width: 0.18rem;
+                        height: 0.5rem;
+                        background: url(../images/next.png) no-repeat center center / contain;
+                    }
+                }
+            }
+            .gm-content {
+                margin-bottom: 1.12rem;
+                .gm-content-more {
+                    width: 100%;
+                    padding: 0.25rem 0;
+                    border-bottom: $border;
+                    .name {
+                        width: 1.4rem;
+                        margin-right: 0.6rem;
+                        font-size: 0.32rem;
+                        float: left;
+                        text-align: justify;
+                        text-align-last: justify;
+                        overflow: hidden;
+                        height: .39rem;
+                        line-height: .39rem;
+                        color: #666;
+                    }
+                    .des {
+                        width: 4.9rem;
+                        font-size: 0.32rem;
+                        text-align: justify;
+                        float: left;
+                        line-height: .36rem;
+                    }
+                }
+                .point-line {
+                    width: 100%;
+                    position: fixed;
+                    left: 0;
+                    bottom: -.1rem;
+                    z-index: 100000;
+                    background: #fff;
+                    .wrap {
+                        background: #fff;
+                        border-top: $border;
+                        @include border-box;
+
+                    }
+                    .point-do {
+                        width: 100%;
+                        height: 1rem;
+                        @include border-box;
+                        padding:.25rem 0;
+                    }
+                    .daohang{
+                        width: 100%;
+                        height: 100%;
+                        @include border-box;
+                        padding: 0 0.3rem;
+                        background: #fff;
+                        border:none;
+                        text-align: center;
+                        i {
+                            display: inline-block;
+                            width: 0.4rem;
+                            height: 100%;
+                            background: url(../images/daohang.png) no-repeat center center / contain;
+                            margin-right: 0.15rem;
+                            vertical-align: top;
+                        }
+                        span {
+                            display: inline-block;
+                            height: 100%;
+                            line-height: 0.5rem;
+                            font-size: 0.32rem;
+                            vertical-align: top;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

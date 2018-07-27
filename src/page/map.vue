@@ -5,7 +5,12 @@
                 <input type="text" id="search" placeholder="请输入您要去的地点" v-on:input="keyUpSearch" ref="searchText" >
                 <img src="../images/search.png" class="search-icon">
                 <img src="../images/search_close.png" class="search-empty" v-show="closetext" @click="clearSearch">
-                <span class="change-model"><router-link :to="{path:'./lists',query:{elec:this.elec,opentype:this.opentype,fast:this.fast,store:this.store}}" style="color:#333;text-decoration:none;"></router-link></span>
+                <span class="change-model">
+                    <router-link :to="{path:'./lists',
+                                    query:{mylat: this.myLat, mylng: this.myLng, lng:this.viewCenter.lng, lat:this.viewCenter.lat, elec:this.elec, opentype:this.opentype, fast:this.fast, store:this.store}}" 
+                                    style="color:#333;text-decoration:none;">
+                    </router-link>
+                </span>
                 <div id="search-con"><ul></ul></div>
             </div>
             <div id="temp" style="display:none"></div>
@@ -18,11 +23,19 @@
         </div>
         <div class="container">
             <div id="container" class="mymap">
-                <span class="marker" v-for="(item,index) in data" :key="index" :   @click="stationClick(e,index)"></span>
+                <span class="marker" v-for="(item,index) in data" :key="index"  @click="stationClick(e,index)"></span>
                 
             </div>
             <div class="shaixuan">
                 <router-link :to="{path:'./filter',query:{elec:this.elec,opentype:this.opentype,fast:this.fast,store:this.store}}"></router-link>
+            </div>
+            <div class="mine">
+                <!-- <a href="/open/member">
+                    <img src="/Public/open/images/mine.png" alt="">
+                </a> -->
+                <router-link to="../personal/index">
+                    <img src="../images/mine.png" alt="">
+                </router-link>
             </div>
         </div>
     </div>
@@ -48,7 +61,7 @@
                 opentype:"", //对内对外
                 fast:"", //快慢充
                 store:"", // 运营商
-                myLat:"", //我的位置的维度
+                myLat:"", //我的位置的纬度
                 myLng:"", //我的位置的经度
                 viewCenter:"",
                 viewNorthWest:"",
@@ -56,16 +69,15 @@
                 data:"",//地图站点数据
                 stationItem:"",
 
-
             }
         },
         mounted: function(){
             this.init();
             //做个判断，地址栏是否包括elec等字段
-            this.elec = this.$route.query.elec;
-            this.opentype = this.$route.query.opentype;
-            this.fast = this.$route.query.fast;
-            this.store = this.$route.query.store;
+            this.elec =this.$route.query.elec;
+            this.opentype =this.$route.query.opentype;
+            this.fast =this.$route.query.fast;
+            this.store =this.$route.query.store;
         },
         methods:{
             init: function(){
@@ -178,7 +190,6 @@
                 var txt = this.$refs.searchText.value;
                 txt === "" ? _this.closetext = false : _this.closetext = true;
              
-                
                 AMap.service(["AMap.PlaceSearch"], function() { 
                     var placeSearch = new AMap.PlaceSearch({ 
                         //构造地点查询类 
