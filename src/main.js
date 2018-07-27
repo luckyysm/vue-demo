@@ -4,10 +4,11 @@ import "./common/css/reset.css"
 import "./common/js/adaptation"
 import Vue from 'vue'
 import App from './App'
-import router from './router'
 import Tips from './components/tips/tips'
 //axios
 import axios from 'axios'
+import router from './router'
+
 Vue.prototype.$http = axios;
 
 // import AMap from 'vue-amap'
